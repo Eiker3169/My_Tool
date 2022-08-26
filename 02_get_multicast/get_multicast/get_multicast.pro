@@ -11,13 +11,18 @@ CONFIG += c++17
 
 SOURCES += \
     main.cpp \
-    get_multicast.cpp
+    get_multicast.cpp \
+ \ #   scan_ip.cpp
+    scan_ip.cpp
 
 HEADERS += \
-    get_multicast.h
+    get_multicast.h \
+ \   # scan_ip.h
+    scan_ip.h
 
 FORMS += \
-    get_multicast.ui
+    get_multicast.ui \
+    scan_ip.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

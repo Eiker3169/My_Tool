@@ -13,6 +13,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
 
@@ -22,6 +23,7 @@ class Ui_get_multicast
 {
 public:
     QWidget *centralwidget;
+    QPushButton *scan_ip;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -32,9 +34,13 @@ public:
         get_multicast->resize(800, 600);
         centralwidget = new QWidget(get_multicast);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
+        scan_ip = new QPushButton(centralwidget);
+        scan_ip->setObjectName(QString::fromUtf8("scan_ip"));
+        scan_ip->setGeometry(QRect(350, 10, 121, 29));
         get_multicast->setCentralWidget(centralwidget);
         menubar = new QMenuBar(get_multicast);
         menubar->setObjectName(QString::fromUtf8("menubar"));
+        menubar->setGeometry(QRect(0, 0, 800, 22));
         get_multicast->setMenuBar(menubar);
         statusbar = new QStatusBar(get_multicast);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -48,6 +54,7 @@ public:
     void retranslateUi(QMainWindow *get_multicast)
     {
         get_multicast->setWindowTitle(QCoreApplication::translate("get_multicast", "get_multicast", nullptr));
+        scan_ip->setText(QCoreApplication::translate("get_multicast", "\346\211\253\346\217\217", nullptr));
     } // retranslateUi
 
 };
