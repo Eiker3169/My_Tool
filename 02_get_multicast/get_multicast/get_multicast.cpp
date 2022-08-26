@@ -10,8 +10,6 @@ get_multicast::get_multicast(QWidget *parent)
 {
     ui->setupUi(this);
     init_multicast();
-
-
 }
 
 get_multicast::~get_multicast()
@@ -36,6 +34,10 @@ void get_multicast::on_scan_ip_clicked()
             qDebug()<<"test";
             is_close = false;
             leaveMulticast();
+            useRow = 0;
+            for(int i=0;i<256;i++){
+                buf[i]="";
+            }
         });
     }
 //    else
@@ -81,7 +83,6 @@ void get_multicast::leaveMulticast()
 
 void get_multicast::dealReadyRead()
 {
-    qDebug()<<"cc";
     if(is_close == true){
     bool ok,is_exist=false;
     QString data_hexstr,STX,IP;
