@@ -247,7 +247,6 @@ Makefile: ../get_multicast/get_multicast.pro ../../../../Qt/5.15.2/mingw81_32/mk
 		../../../../Qt/5.15.2/mingw81_32/mkspecs/features/qt_config.prf \
 		../../../../Qt/5.15.2/mingw81_32/mkspecs/win32-g++/qmake.conf \
 		../../../../Qt/5.15.2/mingw81_32/mkspecs/features/spec_post.prf \
-		.qmake.stash \
 		../../../../Qt/5.15.2/mingw81_32/mkspecs/features/exclusive_builds.prf \
 		../../../../Qt/5.15.2/mingw81_32/mkspecs/features/toolchain.prf \
 		../../../../Qt/5.15.2/mingw81_32/mkspecs/features/default_pre.prf \
@@ -277,6 +276,7 @@ Makefile: ../get_multicast/get_multicast.pro ../../../../Qt/5.15.2/mingw81_32/mk
 		../../../../Qt/5.15.2/mingw81_32/lib/Qt5Network.prl \
 		../../../../Qt/5.15.2/mingw81_32/lib/Qt5Core.prl \
 		../../../../Qt/5.15.2/mingw81_32/lib/qtmain.prl \
+		.qmake.stash \
 		../../../../Qt/5.15.2/mingw81_32/mkspecs/features/build_pass.prf
 	$(QMAKE) -o Makefile ..\get_multicast\get_multicast.pro -spec win32-g++ "CONFIG+=qtquickcompiler"
 ../../../../Qt/5.15.2/mingw81_32/mkspecs/features/spec_pre.prf:
@@ -456,7 +456,6 @@ Makefile: ../get_multicast/get_multicast.pro ../../../../Qt/5.15.2/mingw81_32/mk
 ../../../../Qt/5.15.2/mingw81_32/mkspecs/features/qt_config.prf:
 ../../../../Qt/5.15.2/mingw81_32/mkspecs/win32-g++/qmake.conf:
 ../../../../Qt/5.15.2/mingw81_32/mkspecs/features/spec_post.prf:
-.qmake.stash:
 ../../../../Qt/5.15.2/mingw81_32/mkspecs/features/exclusive_builds.prf:
 ../../../../Qt/5.15.2/mingw81_32/mkspecs/features/toolchain.prf:
 ../../../../Qt/5.15.2/mingw81_32/mkspecs/features/default_pre.prf:
@@ -486,6 +485,7 @@ Makefile: ../get_multicast/get_multicast.pro ../../../../Qt/5.15.2/mingw81_32/mk
 ../../../../Qt/5.15.2/mingw81_32/lib/Qt5Network.prl:
 ../../../../Qt/5.15.2/mingw81_32/lib/Qt5Core.prl:
 ../../../../Qt/5.15.2/mingw81_32/lib/qtmain.prl:
+.qmake.stash:
 ../../../../Qt/5.15.2/mingw81_32/mkspecs/features/build_pass.prf:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ..\get_multicast\get_multicast.pro -spec win32-g++ "CONFIG+=qtquickcompiler"
