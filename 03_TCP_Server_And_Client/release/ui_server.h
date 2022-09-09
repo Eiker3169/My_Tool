@@ -28,6 +28,7 @@ public:
     QGroupBox *groupBox_2;
     QTextEdit *write_text;
     QPushButton *send;
+    QLabel *label_2;
 
     void setupUi(QWidget *server)
     {
@@ -56,6 +57,9 @@ public:
         send = new QPushButton(groupBox_2);
         send->setObjectName(QString::fromUtf8("send"));
         send->setGeometry(QRect(10, 140, 411, 29));
+        label_2 = new QLabel(server);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setGeometry(QRect(380, 20, 69, 20));
 
         retranslateUi(server);
 
@@ -69,6 +73,7 @@ public:
         groupBox->setTitle(QCoreApplication::translate("server", "Read", nullptr));
         groupBox_2->setTitle(QCoreApplication::translate("server", "Write", nullptr));
         send->setText(QCoreApplication::translate("server", "send", nullptr));
+        label_2->setText(QCoreApplication::translate("server", "Port:8888", nullptr));
     } // retranslateUi
 
 };
