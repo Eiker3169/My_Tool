@@ -9,7 +9,7 @@
         "-I",
         "D:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
         "-I",
-        "C:\\Users\\31698\\AppData\\Local\\Temp\\QtCreator-VxpjyE\\clang-uiheader-NhFYfL",
+        "C:\\Users\\31698\\AppData\\Local\\Temp\\QtCreator-rdYHtn\\clang-uiheader-JqYOKJ",
         "-nostdinc",
         "-nostdinc++",
         "-std=gnu++1z",
@@ -33,7 +33,7 @@
         "-DQT_CORE_LIB",
         "-DQT_NEEDS_QMAIN",
         "-I",
-        "D:\\_My_Tool\\My_Tool\\03TCP_Server_And_Client\\Server_And_Client",
+        "D:\\_My_Tool\\My_Tool\\03_TCP_Server_And_Client\\Server_And_Client",
         "-I",
         "D:\\Qt\\5.15.2\\mingw81_32\\include",
         "-I",
@@ -47,9 +47,9 @@
         "-I",
         "D:\\Qt\\5.15.2\\mingw81_32\\include\\QtCore",
         "-I",
-        "D:\\_My_Tool\\My_Tool\\03TCP_Server_And_Client\\release\\release",
+        "D:\\_My_Tool\\My_Tool\\03_TCP_Server_And_Client\\release\\release",
         "-I",
-        "D:\\_My_Tool\\My_Tool\\03TCP_Server_And_Client\\release",
+        "D:\\_My_Tool\\My_Tool\\03_TCP_Server_And_Client\\release",
         "-I",
         "D:\\Qt\\5.15.2\\mingw81_32\\mkspecs\\win32-g++",
         "-isystem",
@@ -73,10 +73,10 @@
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
         "-fno-delayed-template-parsing",
-        "D:\\_My_Tool\\My_Tool\\03TCP_Server_And_Client\\Server_And_Client\\client.cpp"
+        "D:\\_My_Tool\\My_Tool\\03_TCP_Server_And_Client\\Server_And_Client\\client.cpp"
     ],
-    "directory": "D:/_My_Tool/My_Tool/03TCP_Server_And_Client/release/.qtc_clangd",
-    "file": "D:/_My_Tool/My_Tool/03TCP_Server_And_Client/Server_And_Client/client.cpp"
+    "directory": "D:/_My_Tool/My_Tool/03_TCP_Server_And_Client/release/.qtc_clangd",
+    "file": "D:/_My_Tool/My_Tool/03_TCP_Server_And_Client/Server_And_Client/client.cpp"
 },
 {
     "arguments": [
@@ -88,7 +88,7 @@
         "-I",
         "D:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
         "-I",
-        "C:\\Users\\31698\\AppData\\Local\\Temp\\QtCreator-VxpjyE\\clang-uiheader-NhFYfL",
+        "C:\\Users\\31698\\AppData\\Local\\Temp\\QtCreator-rdYHtn\\clang-uiheader-JqYOKJ",
         "-nostdinc",
         "-nostdinc++",
         "-std=gnu++1z",
@@ -112,7 +112,7 @@
         "-DQT_CORE_LIB",
         "-DQT_NEEDS_QMAIN",
         "-I",
-        "D:\\_My_Tool\\My_Tool\\03TCP_Server_And_Client\\Server_And_Client",
+        "D:\\_My_Tool\\My_Tool\\03_TCP_Server_And_Client\\Server_And_Client",
         "-I",
         "D:\\Qt\\5.15.2\\mingw81_32\\include",
         "-I",
@@ -126,9 +126,9 @@
         "-I",
         "D:\\Qt\\5.15.2\\mingw81_32\\include\\QtCore",
         "-I",
-        "D:\\_My_Tool\\My_Tool\\03TCP_Server_And_Client\\release\\release",
+        "D:\\_My_Tool\\My_Tool\\03_TCP_Server_And_Client\\release\\release",
         "-I",
-        "D:\\_My_Tool\\My_Tool\\03TCP_Server_And_Client\\release",
+        "D:\\_My_Tool\\My_Tool\\03_TCP_Server_And_Client\\release",
         "-I",
         "D:\\Qt\\5.15.2\\mingw81_32\\mkspecs\\win32-g++",
         "-isystem",
@@ -152,10 +152,10 @@
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
         "-fno-delayed-template-parsing",
-        "D:\\_My_Tool\\My_Tool\\03TCP_Server_And_Client\\Server_And_Client\\main.cpp"
+        "D:\\_My_Tool\\My_Tool\\03_TCP_Server_And_Client\\Server_And_Client\\main.cpp"
     ],
-    "directory": "D:/_My_Tool/My_Tool/03TCP_Server_And_Client/release/.qtc_clangd",
-    "file": "D:/_My_Tool/My_Tool/03TCP_Server_And_Client/Server_And_Client/main.cpp"
+    "directory": "D:/_My_Tool/My_Tool/03_TCP_Server_And_Client/release/.qtc_clangd",
+    "file": "D:/_My_Tool/My_Tool/03_TCP_Server_And_Client/Server_And_Client/main.cpp"
 },
 {
     "arguments": [
@@ -167,7 +167,7 @@
         "-I",
         "D:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
         "-I",
-        "C:\\Users\\31698\\AppData\\Local\\Temp\\QtCreator-VxpjyE\\clang-uiheader-NhFYfL",
+        "C:\\Users\\31698\\AppData\\Local\\Temp\\QtCreator-rdYHtn\\clang-uiheader-JqYOKJ",
         "-nostdinc",
         "-nostdinc++",
         "-std=gnu++1z",
@@ -191,7 +191,7 @@
         "-DQT_CORE_LIB",
         "-DQT_NEEDS_QMAIN",
         "-I",
-        "D:\\_My_Tool\\My_Tool\\03TCP_Server_And_Client\\Server_And_Client",
+        "D:\\_My_Tool\\My_Tool\\03_TCP_Server_And_Client\\Server_And_Client",
         "-I",
         "D:\\Qt\\5.15.2\\mingw81_32\\include",
         "-I",
@@ -205,9 +205,9 @@
         "-I",
         "D:\\Qt\\5.15.2\\mingw81_32\\include\\QtCore",
         "-I",
-        "D:\\_My_Tool\\My_Tool\\03TCP_Server_And_Client\\release\\release",
+        "D:\\_My_Tool\\My_Tool\\03_TCP_Server_And_Client\\release\\release",
         "-I",
-        "D:\\_My_Tool\\My_Tool\\03TCP_Server_And_Client\\release",
+        "D:\\_My_Tool\\My_Tool\\03_TCP_Server_And_Client\\release",
         "-I",
         "D:\\Qt\\5.15.2\\mingw81_32\\mkspecs\\win32-g++",
         "-isystem",
@@ -231,10 +231,10 @@
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
         "-fno-delayed-template-parsing",
-        "D:\\_My_Tool\\My_Tool\\03TCP_Server_And_Client\\Server_And_Client\\mainwindow.cpp"
+        "D:\\_My_Tool\\My_Tool\\03_TCP_Server_And_Client\\Server_And_Client\\mainwindow.cpp"
     ],
-    "directory": "D:/_My_Tool/My_Tool/03TCP_Server_And_Client/release/.qtc_clangd",
-    "file": "D:/_My_Tool/My_Tool/03TCP_Server_And_Client/Server_And_Client/mainwindow.cpp"
+    "directory": "D:/_My_Tool/My_Tool/03_TCP_Server_And_Client/release/.qtc_clangd",
+    "file": "D:/_My_Tool/My_Tool/03_TCP_Server_And_Client/Server_And_Client/mainwindow.cpp"
 },
 {
     "arguments": [
@@ -246,7 +246,7 @@
         "-I",
         "D:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
         "-I",
-        "C:\\Users\\31698\\AppData\\Local\\Temp\\QtCreator-VxpjyE\\clang-uiheader-NhFYfL",
+        "C:\\Users\\31698\\AppData\\Local\\Temp\\QtCreator-rdYHtn\\clang-uiheader-JqYOKJ",
         "-nostdinc",
         "-nostdinc++",
         "-std=gnu++1z",
@@ -270,7 +270,7 @@
         "-DQT_CORE_LIB",
         "-DQT_NEEDS_QMAIN",
         "-I",
-        "D:\\_My_Tool\\My_Tool\\03TCP_Server_And_Client\\Server_And_Client",
+        "D:\\_My_Tool\\My_Tool\\03_TCP_Server_And_Client\\Server_And_Client",
         "-I",
         "D:\\Qt\\5.15.2\\mingw81_32\\include",
         "-I",
@@ -284,9 +284,9 @@
         "-I",
         "D:\\Qt\\5.15.2\\mingw81_32\\include\\QtCore",
         "-I",
-        "D:\\_My_Tool\\My_Tool\\03TCP_Server_And_Client\\release\\release",
+        "D:\\_My_Tool\\My_Tool\\03_TCP_Server_And_Client\\release\\release",
         "-I",
-        "D:\\_My_Tool\\My_Tool\\03TCP_Server_And_Client\\release",
+        "D:\\_My_Tool\\My_Tool\\03_TCP_Server_And_Client\\release",
         "-I",
         "D:\\Qt\\5.15.2\\mingw81_32\\mkspecs\\win32-g++",
         "-isystem",
@@ -310,10 +310,10 @@
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
         "-fno-delayed-template-parsing",
-        "D:\\_My_Tool\\My_Tool\\03TCP_Server_And_Client\\Server_And_Client\\server.cpp"
+        "D:\\_My_Tool\\My_Tool\\03_TCP_Server_And_Client\\Server_And_Client\\server.cpp"
     ],
-    "directory": "D:/_My_Tool/My_Tool/03TCP_Server_And_Client/release/.qtc_clangd",
-    "file": "D:/_My_Tool/My_Tool/03TCP_Server_And_Client/Server_And_Client/server.cpp"
+    "directory": "D:/_My_Tool/My_Tool/03_TCP_Server_And_Client/release/.qtc_clangd",
+    "file": "D:/_My_Tool/My_Tool/03_TCP_Server_And_Client/Server_And_Client/server.cpp"
 },
 {
     "arguments": [
@@ -325,7 +325,7 @@
         "-I",
         "D:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
         "-I",
-        "C:\\Users\\31698\\AppData\\Local\\Temp\\QtCreator-VxpjyE\\clang-uiheader-NhFYfL",
+        "C:\\Users\\31698\\AppData\\Local\\Temp\\QtCreator-rdYHtn\\clang-uiheader-JqYOKJ",
         "-nostdinc",
         "-nostdinc++",
         "-std=gnu++1z",
@@ -349,7 +349,7 @@
         "-DQT_CORE_LIB",
         "-DQT_NEEDS_QMAIN",
         "-I",
-        "D:\\_My_Tool\\My_Tool\\03TCP_Server_And_Client\\Server_And_Client",
+        "D:\\_My_Tool\\My_Tool\\03_TCP_Server_And_Client\\Server_And_Client",
         "-I",
         "D:\\Qt\\5.15.2\\mingw81_32\\include",
         "-I",
@@ -363,9 +363,9 @@
         "-I",
         "D:\\Qt\\5.15.2\\mingw81_32\\include\\QtCore",
         "-I",
-        "D:\\_My_Tool\\My_Tool\\03TCP_Server_And_Client\\release\\release",
+        "D:\\_My_Tool\\My_Tool\\03_TCP_Server_And_Client\\release\\release",
         "-I",
-        "D:\\_My_Tool\\My_Tool\\03TCP_Server_And_Client\\release",
+        "D:\\_My_Tool\\My_Tool\\03_TCP_Server_And_Client\\release",
         "-I",
         "D:\\Qt\\5.15.2\\mingw81_32\\mkspecs\\win32-g++",
         "-isystem",
@@ -389,10 +389,10 @@
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
         "-fno-delayed-template-parsing",
-        "D:\\_My_Tool\\My_Tool\\03TCP_Server_And_Client\\Server_And_Client\\client.h"
+        "D:\\_My_Tool\\My_Tool\\03_TCP_Server_And_Client\\Server_And_Client\\client.h"
     ],
-    "directory": "D:/_My_Tool/My_Tool/03TCP_Server_And_Client/release/.qtc_clangd",
-    "file": "D:/_My_Tool/My_Tool/03TCP_Server_And_Client/Server_And_Client/client.h"
+    "directory": "D:/_My_Tool/My_Tool/03_TCP_Server_And_Client/release/.qtc_clangd",
+    "file": "D:/_My_Tool/My_Tool/03_TCP_Server_And_Client/Server_And_Client/client.h"
 },
 {
     "arguments": [
@@ -404,7 +404,7 @@
         "-I",
         "D:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
         "-I",
-        "C:\\Users\\31698\\AppData\\Local\\Temp\\QtCreator-VxpjyE\\clang-uiheader-NhFYfL",
+        "C:\\Users\\31698\\AppData\\Local\\Temp\\QtCreator-rdYHtn\\clang-uiheader-JqYOKJ",
         "-nostdinc",
         "-nostdinc++",
         "-std=gnu++1z",
@@ -428,7 +428,7 @@
         "-DQT_CORE_LIB",
         "-DQT_NEEDS_QMAIN",
         "-I",
-        "D:\\_My_Tool\\My_Tool\\03TCP_Server_And_Client\\Server_And_Client",
+        "D:\\_My_Tool\\My_Tool\\03_TCP_Server_And_Client\\Server_And_Client",
         "-I",
         "D:\\Qt\\5.15.2\\mingw81_32\\include",
         "-I",
@@ -442,9 +442,9 @@
         "-I",
         "D:\\Qt\\5.15.2\\mingw81_32\\include\\QtCore",
         "-I",
-        "D:\\_My_Tool\\My_Tool\\03TCP_Server_And_Client\\release\\release",
+        "D:\\_My_Tool\\My_Tool\\03_TCP_Server_And_Client\\release\\release",
         "-I",
-        "D:\\_My_Tool\\My_Tool\\03TCP_Server_And_Client\\release",
+        "D:\\_My_Tool\\My_Tool\\03_TCP_Server_And_Client\\release",
         "-I",
         "D:\\Qt\\5.15.2\\mingw81_32\\mkspecs\\win32-g++",
         "-isystem",
@@ -468,10 +468,10 @@
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
         "-fno-delayed-template-parsing",
-        "D:\\_My_Tool\\My_Tool\\03TCP_Server_And_Client\\Server_And_Client\\mainwindow.h"
+        "D:\\_My_Tool\\My_Tool\\03_TCP_Server_And_Client\\Server_And_Client\\mainwindow.h"
     ],
-    "directory": "D:/_My_Tool/My_Tool/03TCP_Server_And_Client/release/.qtc_clangd",
-    "file": "D:/_My_Tool/My_Tool/03TCP_Server_And_Client/Server_And_Client/mainwindow.h"
+    "directory": "D:/_My_Tool/My_Tool/03_TCP_Server_And_Client/release/.qtc_clangd",
+    "file": "D:/_My_Tool/My_Tool/03_TCP_Server_And_Client/Server_And_Client/mainwindow.h"
 },
 {
     "arguments": [
@@ -483,7 +483,7 @@
         "-I",
         "D:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
         "-I",
-        "C:\\Users\\31698\\AppData\\Local\\Temp\\QtCreator-VxpjyE\\clang-uiheader-NhFYfL",
+        "C:\\Users\\31698\\AppData\\Local\\Temp\\QtCreator-rdYHtn\\clang-uiheader-JqYOKJ",
         "-nostdinc",
         "-nostdinc++",
         "-std=gnu++1z",
@@ -507,7 +507,7 @@
         "-DQT_CORE_LIB",
         "-DQT_NEEDS_QMAIN",
         "-I",
-        "D:\\_My_Tool\\My_Tool\\03TCP_Server_And_Client\\Server_And_Client",
+        "D:\\_My_Tool\\My_Tool\\03_TCP_Server_And_Client\\Server_And_Client",
         "-I",
         "D:\\Qt\\5.15.2\\mingw81_32\\include",
         "-I",
@@ -521,9 +521,9 @@
         "-I",
         "D:\\Qt\\5.15.2\\mingw81_32\\include\\QtCore",
         "-I",
-        "D:\\_My_Tool\\My_Tool\\03TCP_Server_And_Client\\release\\release",
+        "D:\\_My_Tool\\My_Tool\\03_TCP_Server_And_Client\\release\\release",
         "-I",
-        "D:\\_My_Tool\\My_Tool\\03TCP_Server_And_Client\\release",
+        "D:\\_My_Tool\\My_Tool\\03_TCP_Server_And_Client\\release",
         "-I",
         "D:\\Qt\\5.15.2\\mingw81_32\\mkspecs\\win32-g++",
         "-isystem",
@@ -547,10 +547,10 @@
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
         "-fno-delayed-template-parsing",
-        "D:\\_My_Tool\\My_Tool\\03TCP_Server_And_Client\\Server_And_Client\\server.h"
+        "D:\\_My_Tool\\My_Tool\\03_TCP_Server_And_Client\\Server_And_Client\\server.h"
     ],
-    "directory": "D:/_My_Tool/My_Tool/03TCP_Server_And_Client/release/.qtc_clangd",
-    "file": "D:/_My_Tool/My_Tool/03TCP_Server_And_Client/Server_And_Client/server.h"
+    "directory": "D:/_My_Tool/My_Tool/03_TCP_Server_And_Client/release/.qtc_clangd",
+    "file": "D:/_My_Tool/My_Tool/03_TCP_Server_And_Client/Server_And_Client/server.h"
 },
 {
     "arguments": [
@@ -562,7 +562,7 @@
         "-I",
         "D:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
         "-I",
-        "C:\\Users\\31698\\AppData\\Local\\Temp\\QtCreator-VxpjyE\\clang-uiheader-NhFYfL",
+        "C:\\Users\\31698\\AppData\\Local\\Temp\\QtCreator-rdYHtn\\clang-uiheader-JqYOKJ",
         "-nostdinc",
         "-nostdinc++",
         "-std=gnu++1z",
@@ -586,7 +586,7 @@
         "-DQT_CORE_LIB",
         "-DQT_NEEDS_QMAIN",
         "-I",
-        "D:\\_My_Tool\\My_Tool\\03TCP_Server_And_Client\\Server_And_Client",
+        "D:\\_My_Tool\\My_Tool\\03_TCP_Server_And_Client\\Server_And_Client",
         "-I",
         "D:\\Qt\\5.15.2\\mingw81_32\\include",
         "-I",
@@ -600,9 +600,9 @@
         "-I",
         "D:\\Qt\\5.15.2\\mingw81_32\\include\\QtCore",
         "-I",
-        "D:\\_My_Tool\\My_Tool\\03TCP_Server_And_Client\\release\\release",
+        "D:\\_My_Tool\\My_Tool\\03_TCP_Server_And_Client\\release\\release",
         "-I",
-        "D:\\_My_Tool\\My_Tool\\03TCP_Server_And_Client\\release",
+        "D:\\_My_Tool\\My_Tool\\03_TCP_Server_And_Client\\release",
         "-I",
         "D:\\Qt\\5.15.2\\mingw81_32\\mkspecs\\win32-g++",
         "-isystem",
@@ -626,10 +626,10 @@
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
         "-fno-delayed-template-parsing",
-        "D:\\_My_Tool\\My_Tool\\03TCP_Server_And_Client\\release\\ui_mainwindow.h"
+        "D:\\_My_Tool\\My_Tool\\03_TCP_Server_And_Client\\release\\ui_client.h"
     ],
-    "directory": "D:/_My_Tool/My_Tool/03TCP_Server_And_Client/release/.qtc_clangd",
-    "file": "D:/_My_Tool/My_Tool/03TCP_Server_And_Client/release/ui_mainwindow.h"
+    "directory": "D:/_My_Tool/My_Tool/03_TCP_Server_And_Client/release/.qtc_clangd",
+    "file": "D:/_My_Tool/My_Tool/03_TCP_Server_And_Client/release/ui_client.h"
 },
 {
     "arguments": [
@@ -641,7 +641,7 @@
         "-I",
         "D:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
         "-I",
-        "C:\\Users\\31698\\AppData\\Local\\Temp\\QtCreator-VxpjyE\\clang-uiheader-NhFYfL",
+        "C:\\Users\\31698\\AppData\\Local\\Temp\\QtCreator-rdYHtn\\clang-uiheader-JqYOKJ",
         "-nostdinc",
         "-nostdinc++",
         "-std=gnu++1z",
@@ -665,7 +665,7 @@
         "-DQT_CORE_LIB",
         "-DQT_NEEDS_QMAIN",
         "-I",
-        "D:\\_My_Tool\\My_Tool\\03TCP_Server_And_Client\\Server_And_Client",
+        "D:\\_My_Tool\\My_Tool\\03_TCP_Server_And_Client\\Server_And_Client",
         "-I",
         "D:\\Qt\\5.15.2\\mingw81_32\\include",
         "-I",
@@ -679,9 +679,9 @@
         "-I",
         "D:\\Qt\\5.15.2\\mingw81_32\\include\\QtCore",
         "-I",
-        "D:\\_My_Tool\\My_Tool\\03TCP_Server_And_Client\\release\\release",
+        "D:\\_My_Tool\\My_Tool\\03_TCP_Server_And_Client\\release\\release",
         "-I",
-        "D:\\_My_Tool\\My_Tool\\03TCP_Server_And_Client\\release",
+        "D:\\_My_Tool\\My_Tool\\03_TCP_Server_And_Client\\release",
         "-I",
         "D:\\Qt\\5.15.2\\mingw81_32\\mkspecs\\win32-g++",
         "-isystem",
@@ -705,10 +705,10 @@
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
         "-fno-delayed-template-parsing",
-        "D:\\_My_Tool\\My_Tool\\03TCP_Server_And_Client\\release\\ui_client.h"
+        "D:\\_My_Tool\\My_Tool\\03_TCP_Server_And_Client\\release\\ui_server.h"
     ],
-    "directory": "D:/_My_Tool/My_Tool/03TCP_Server_And_Client/release/.qtc_clangd",
-    "file": "D:/_My_Tool/My_Tool/03TCP_Server_And_Client/release/ui_client.h"
+    "directory": "D:/_My_Tool/My_Tool/03_TCP_Server_And_Client/release/.qtc_clangd",
+    "file": "D:/_My_Tool/My_Tool/03_TCP_Server_And_Client/release/ui_server.h"
 },
 {
     "arguments": [
@@ -720,7 +720,7 @@
         "-I",
         "D:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
         "-I",
-        "C:\\Users\\31698\\AppData\\Local\\Temp\\QtCreator-VxpjyE\\clang-uiheader-NhFYfL",
+        "C:\\Users\\31698\\AppData\\Local\\Temp\\QtCreator-rdYHtn\\clang-uiheader-JqYOKJ",
         "-nostdinc",
         "-nostdinc++",
         "-std=gnu++1z",
@@ -744,7 +744,7 @@
         "-DQT_CORE_LIB",
         "-DQT_NEEDS_QMAIN",
         "-I",
-        "D:\\_My_Tool\\My_Tool\\03TCP_Server_And_Client\\Server_And_Client",
+        "D:\\_My_Tool\\My_Tool\\03_TCP_Server_And_Client\\Server_And_Client",
         "-I",
         "D:\\Qt\\5.15.2\\mingw81_32\\include",
         "-I",
@@ -758,9 +758,9 @@
         "-I",
         "D:\\Qt\\5.15.2\\mingw81_32\\include\\QtCore",
         "-I",
-        "D:\\_My_Tool\\My_Tool\\03TCP_Server_And_Client\\release\\release",
+        "D:\\_My_Tool\\My_Tool\\03_TCP_Server_And_Client\\release\\release",
         "-I",
-        "D:\\_My_Tool\\My_Tool\\03TCP_Server_And_Client\\release",
+        "D:\\_My_Tool\\My_Tool\\03_TCP_Server_And_Client\\release",
         "-I",
         "D:\\Qt\\5.15.2\\mingw81_32\\mkspecs\\win32-g++",
         "-isystem",
@@ -784,9 +784,9 @@
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
         "-fno-delayed-template-parsing",
-        "D:\\_My_Tool\\My_Tool\\03TCP_Server_And_Client\\release\\ui_server.h"
+        "D:\\_My_Tool\\My_Tool\\03_TCP_Server_And_Client\\release\\ui_mainwindow.h"
     ],
-    "directory": "D:/_My_Tool/My_Tool/03TCP_Server_And_Client/release/.qtc_clangd",
-    "file": "D:/_My_Tool/My_Tool/03TCP_Server_And_Client/release/ui_server.h"
+    "directory": "D:/_My_Tool/My_Tool/03_TCP_Server_And_Client/release/.qtc_clangd",
+    "file": "D:/_My_Tool/My_Tool/03_TCP_Server_And_Client/release/ui_mainwindow.h"
 }
 ]
