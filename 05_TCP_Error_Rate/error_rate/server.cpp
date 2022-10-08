@@ -35,7 +35,9 @@ server::server(QWidget *parent) :
                 //从通信套接字中取出内容
                 QString str=tcp_socket->readAll();
                  //在编辑区域显示
-                ui->read_text->setText("客户端："+str);
+                ui->read_text->insertPlainText(str);
+
+                tcp_socket->write(str.toUtf8().data());
             });
         });
 
