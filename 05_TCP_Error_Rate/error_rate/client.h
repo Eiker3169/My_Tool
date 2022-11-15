@@ -114,7 +114,7 @@ public:
     /**
      * @brief error_rate 误码率计算
      */
-    void error_rate(void);
+    void m_error_rate(void);
 
     /**
      * @brief show_sended_received_byte 显示已发送字节、已接收字节
