@@ -20,6 +20,24 @@ client::client(QWidget *parent) :
             QString str=tcpsocket->readAll();
 
             show_received_text(str);
+
+//        QByteArray bytes=tcpsocket->readAll();
+//        QString str = bytes.toHex();
+//        QString str=tcpsocket->readAll();
+//        qDebug()<<str;
+//            bool ok;
+//            int length = str.length();
+//            for(int i = 0; i < length-6; i++){
+//                if((str.mid(i,2)=="59")&&(str.mid(i+4,2)=="30")){
+//                    QString tmp = str.mid(i+2,2);
+//                    int value = tmp.toInt(&ok,16)*2;
+//                    tmp = str.mid(i+6,value);
+//                    show_received_text(tmp);
+//                }
+//            }
+
+
+
         });
 
 }
@@ -98,6 +116,25 @@ void client::show_received_text(QString str)
 void client::send_data(QString str)
 {
     tcpsocket->write(str.toUtf8().data());
+
+
+//    QString tmp_str;
+//    int length = str.length();
+//    unsigned _length = length/2;
+//    QString str_length = QString::number(_length,16);
+//    if(str_length.length()==1)
+//    {
+//        str_length = "0"+str_length;
+//    }
+
+////    unsigned char crc_hi = CRC & 0xff;
+////    unsigned char crc_lo = CRC >> 8;
+////    QString crc_h = QString::number((char)crc_hi,16);
+////    QString crc_l = QString::number((char)crc_lo,16);
+////    QString crc_ = crc_h+crc_l;
+//    tmp_str = "59" + str_length + "30" + str + "0000" + "47";
+
+//    tcpsocket->write(tmp_str.toUtf8().data());
 }
 
 void client::show_send_data(QString str)
@@ -115,7 +152,7 @@ void client::show_recive_data(QString str)
     show_received_text(str);
 }
 
-void client::error_rate()
+void client::m_error_rate()
 {
     int error_ = 0;
     send_str = ui->sended_text->toPlainText();
@@ -190,7 +227,7 @@ void client::send_sended_text_content()
          QObject::connect(&m_timer,&QTimer::timeout,&m_loop,[&](){
              m_timer.stop();
              m_loop.quit();
-             error_rate();
+             m_error_rate();
              ui->start->setEnabled(true);
              ui->start_2->setEnabled(true);
          });
@@ -236,7 +273,7 @@ void client::test()
          QObject::connect(&m_timer,&QTimer::timeout,&m_loop,[&](){
              m_timer.stop();
              m_loop.quit();
-             error_rate();
+             m_error_rate();
              ui->start->setEnabled(true);
              ui->start_2->setEnabled(true);
          });
@@ -357,6 +394,6 @@ void client::on_reset_2_clicked()
 
 void client::on_checkout_clicked()
 {
-    error_rate();
+    m_error_rate();
 }
 
