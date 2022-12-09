@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Serial_port_test_t {
-    QByteArrayData data[18];
-    char stringdata0[223];
+    QByteArrayData data[20];
+    char stringdata0[276];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -49,7 +49,9 @@ QT_MOC_LITERAL(13, 126, 5), // "color"
 QT_MOC_LITERAL(14, 132, 24), // "on_openSerialBtn_clicked"
 QT_MOC_LITERAL(15, 157, 21), // "on_clear_data_clicked"
 QT_MOC_LITERAL(16, 179, 21), // "on_start_test_clicked"
-QT_MOC_LITERAL(17, 201, 21) // "on_close_test_clicked"
+QT_MOC_LITERAL(17, 201, 21), // "on_close_test_clicked"
+QT_MOC_LITERAL(18, 223, 26), // "on_start_filtering_clicked"
+QT_MOC_LITERAL(19, 250, 25) // "on_stop_filtering_clicked"
 
     },
     "Serial_port_test\0recvData\0\0message_filtering\0"
@@ -57,7 +59,8 @@ QT_MOC_LITERAL(17, 201, 21) // "on_close_test_clicked"
     "indexOfNthStr\0sourceStr\0str\0N\0"
     "change_str_color\0color\0on_openSerialBtn_clicked\0"
     "on_clear_data_clicked\0on_start_test_clicked\0"
-    "on_close_test_clicked"
+    "on_close_test_clicked\0on_start_filtering_clicked\0"
+    "on_stop_filtering_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -67,7 +70,7 @@ static const uint qt_meta_data_Serial_port_test[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       9,   14, // methods
+      11,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -75,15 +78,17 @@ static const uint qt_meta_data_Serial_port_test[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   59,    2, 0x0a /* Public */,
-       3,    0,   60,    2, 0x0a /* Public */,
-       4,    2,   61,    2, 0x0a /* Public */,
-       8,    3,   66,    2, 0x0a /* Public */,
-      12,    3,   73,    2, 0x0a /* Public */,
-      14,    0,   80,    2, 0x08 /* Private */,
-      15,    0,   81,    2, 0x08 /* Private */,
-      16,    0,   82,    2, 0x08 /* Private */,
-      17,    0,   83,    2, 0x08 /* Private */,
+       1,    0,   69,    2, 0x0a /* Public */,
+       3,    0,   70,    2, 0x0a /* Public */,
+       4,    2,   71,    2, 0x0a /* Public */,
+       8,    3,   76,    2, 0x0a /* Public */,
+      12,    3,   83,    2, 0x0a /* Public */,
+      14,    0,   90,    2, 0x08 /* Private */,
+      15,    0,   91,    2, 0x08 /* Private */,
+      16,    0,   92,    2, 0x08 /* Private */,
+      17,    0,   93,    2, 0x08 /* Private */,
+      18,    0,   94,    2, 0x08 /* Private */,
+      19,    0,   95,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -91,6 +96,8 @@ static const uint qt_meta_data_Serial_port_test[] = {
     QMetaType::Bool, QMetaType::QObjectStar, 0x80000000 | 6,    5,    7,
     QMetaType::Int, QMetaType::QString, QMetaType::QString, QMetaType::UInt,    9,   10,   11,
     QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString,    9,   10,   13,
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -117,6 +124,8 @@ void Serial_port_test::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int
         case 6: _t->on_clear_data_clicked(); break;
         case 7: _t->on_start_test_clicked(); break;
         case 8: _t->on_close_test_clicked(); break;
+        case 9: _t->on_start_filtering_clicked(); break;
+        case 10: _t->on_stop_filtering_clicked(); break;
         default: ;
         }
     }
@@ -151,13 +160,13 @@ int Serial_port_test::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 9)
+        if (_id < 11)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 9;
+        _id -= 11;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 9)
+        if (_id < 11)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 9;
+        _id -= 11;
     }
     return _id;
 }

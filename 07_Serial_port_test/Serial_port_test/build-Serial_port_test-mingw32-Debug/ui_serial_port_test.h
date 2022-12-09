@@ -25,6 +25,7 @@ QT_BEGIN_NAMESPACE
 class Ui_Serial_port_test
 {
 public:
+    QGridLayout *gridLayout_4;
     QGroupBox *groupBox;
     QGridLayout *gridLayout_2;
     QLabel *label_3;
@@ -63,9 +64,17 @@ public:
         if (Serial_port_test->objectName().isEmpty())
             Serial_port_test->setObjectName(QString::fromUtf8("Serial_port_test"));
         Serial_port_test->resize(877, 603);
+        gridLayout_4 = new QGridLayout(Serial_port_test);
+        gridLayout_4->setObjectName(QString::fromUtf8("gridLayout_4"));
         groupBox = new QGroupBox(Serial_port_test);
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
-        groupBox->setGeometry(QRect(11, 11, 201, 301));
+        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(groupBox->sizePolicy().hasHeightForWidth());
+        groupBox->setSizePolicy(sizePolicy);
+        groupBox->setMinimumSize(QSize(201, 301));
+        groupBox->setMaximumSize(QSize(201, 301));
         gridLayout_2 = new QGridLayout(groupBox);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
         label_3 = new QLabel(groupBox);
@@ -140,9 +149,11 @@ public:
 
         gridLayout_2->addWidget(streamControlCbx, 5, 1, 1, 1);
 
+
+        gridLayout_4->addWidget(groupBox, 0, 0, 1, 1);
+
         groupBox_2 = new QGroupBox(Serial_port_test);
         groupBox_2->setObjectName(QString::fromUtf8("groupBox_2"));
-        groupBox_2->setGeometry(QRect(230, 11, 631, 511));
         gridLayout = new QGridLayout(groupBox_2);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         logtextEdit = new QTextEdit(groupBox_2);
@@ -150,9 +161,15 @@ public:
 
         gridLayout->addWidget(logtextEdit, 0, 0, 1, 1);
 
+
+        gridLayout_4->addWidget(groupBox_2, 0, 1, 2, 1);
+
         groupBox_3 = new QGroupBox(Serial_port_test);
         groupBox_3->setObjectName(QString::fromUtf8("groupBox_3"));
-        groupBox_3->setGeometry(QRect(10, 320, 201, 271));
+        sizePolicy.setHeightForWidth(groupBox_3->sizePolicy().hasHeightForWidth());
+        groupBox_3->setSizePolicy(sizePolicy);
+        groupBox_3->setMinimumSize(QSize(201, 271));
+        groupBox_3->setMaximumSize(QSize(201, 271));
         gridLayout_3 = new QGridLayout(groupBox_3);
         gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
         msg_filtering = new QLineEdit(groupBox_3);
@@ -201,15 +218,20 @@ public:
 
         gridLayout_3->addWidget(start_filtering, 1, 0, 1, 2);
 
+
+        gridLayout_4->addWidget(groupBox_3, 1, 0, 2, 1);
+
         groupBox_4 = new QGroupBox(Serial_port_test);
         groupBox_4->setObjectName(QString::fromUtf8("groupBox_4"));
-        groupBox_4->setGeometry(QRect(230, 530, 631, 61));
         start_message_filtering = new QPushButton(groupBox_4);
         start_message_filtering->setObjectName(QString::fromUtf8("start_message_filtering"));
         start_message_filtering->setGeometry(QRect(10, 20, 71, 29));
         lineEdit_2 = new QLineEdit(groupBox_4);
         lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
         lineEdit_2->setGeometry(QRect(90, 20, 521, 25));
+
+        gridLayout_4->addWidget(groupBox_4, 2, 1, 1, 1);
+
 
         retranslateUi(Serial_port_test);
 

@@ -44,6 +44,7 @@ public:
     QString serial_buf = "";
     QTimer test_timer;
     bool isconnected = false;// 串口是否已连接
+    bool rec_timer = false;
 
     bool is_open = false;
     int received_count = 0;
@@ -103,6 +104,8 @@ private slots:
     void on_clear_data_clicked();
     void on_start_test_clicked();
     void on_close_test_clicked();
+    void on_start_filtering_clicked();
+    void on_stop_filtering_clicked();
 };
 
 #endif // SERIAL_PORT_TEST_H
