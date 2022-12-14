@@ -13,11 +13,13 @@ CONFIG += c++17
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
-    serial_port_test.cpp
+    serial_port_test.cpp \
+    MyHighlighter.cpp
 
 HEADERS += \
     mainwindow.h \
-    serial_port_test.h
+    serial_port_test.h \
+    MyHighlighter.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

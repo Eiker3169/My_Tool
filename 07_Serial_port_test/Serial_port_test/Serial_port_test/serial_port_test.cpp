@@ -18,6 +18,8 @@ Serial_port_test::Serial_port_test(QWidget *parent) :
 
 //    timer.start(100);
 
+
+
 }
 
 Serial_port_test::~Serial_port_test()
@@ -87,8 +89,6 @@ void Serial_port_test::thread_run()
 
 
 
-
-
 }
 
 
@@ -100,6 +100,8 @@ void Serial_port_test::recvData()
     QObject::connect(&timer,&QTimer::timeout,this,&Serial_port_test::message_filtering);
     timer.start(100);
     }
+
+    QMutexLocker locker(&status_mutex);
 
     QByteArray recvbuf;
     recvbuf = serial->readAll();
@@ -117,16 +119,31 @@ void Serial_port_test::recvData()
 
 void Serial_port_test::message_filtering()
 {
-    QDateTime dateTime = QDateTime::currentDateTime();// 字符串格式化
-    QString timestr = dateTime.toString("[yyyy-MM-dd hh:mm:ss.zzz] ");
-    timestr = QString("<font color=\"#00FA9A\">%1</font> ").arg(timestr);
-    ui->logtextEdit->append(timestr);
-    int tmp_int = serial_buf.size();
-    ui->logtextEdit->append(serial_buf);
-    ui->logtextEdit->append(QString::number(tmp_int));
-    rec_timer = false;
-    QObject::disconnect(&timer,nullptr,nullptr,nullptr);
-    serial_buf = "";
+    if(serial_buf != ""){
+        QMutexLocker locker(&status_mutex);
+
+        QDateTime dateTime = QDateTime::currentDateTime();// 字符串格式化
+        QString timestr = dateTime.toString("[yyyy-MM-dd hh:mm:ss.zzz] ");
+        timestr = QString("<font color=\"#00FA9A\">%1</font> ").arg(timestr);
+        ui->logtextEdit->append(timestr);
+
+        QString tmp_str = ui->msg_filtering->text();
+        QRegExp tmp_RegExp(QString("(%1)").arg(tmp_str));
+        tmp_RegExp.setCaseSensitivity(Qt::CaseInsensitive);
+        if(tmp_str != ""){
+            serial_buf = serial_buf.replace(tmp_RegExp,QString("<font color=\"#FF0000\">%1</font>").arg(tmp_str));
+        }
+
+//    //    serial_buf = serial_buf.replace(QRegExp(tmp_str,Qt::CaseInsensitive),QString("<span style=\"color:red\">%1</span>").arg(tmp_str));
+//        if(tmp_str != ""){
+//            serial_buf = serial_buf.replace(QRegExp(tmp_str,Qt::CaseInsensitive),QString("<font color=\"#FF0000\">%1</font>").arg(tmp_str));
+//        }
+
+        ui->logtextEdit->append(serial_buf);
+        rec_timer = false;
+        QObject::disconnect(&timer,nullptr,nullptr,nullptr);
+        serial_buf = "";
+    }
 
 //    QMutexLocker locker(&status_mutex);
 //    QtConcurrent::run(this,&Serial_port_test::thread_run);
