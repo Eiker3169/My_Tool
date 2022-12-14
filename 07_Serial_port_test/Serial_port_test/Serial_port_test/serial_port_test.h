@@ -50,7 +50,19 @@ public:
     int received_count = 0;
     int test_count = 0;
 
+    bool is_open_filtering = false;
+
     bool message_filtering_flag = false;
+
+    bool is_close_test_connect = false;
+
+    bool received_count_flag = false;
+
+    QString msg_filtering_changed = "";
+
+    bool test = false;
+
+    int test_hz = 1;
 
 
 public:
@@ -60,7 +72,9 @@ public:
      */
     QStringList getPortNameList(void);
 
-    void thread_run(void);
+    void StringToHex(QString str, QByteArray &senddata);
+
+    char ConvertHexChar(char ch);
 
 public slots:
     /**
@@ -71,7 +85,7 @@ public slots:
     /**
      * @brief message_filtering 过滤串口接收到的数据
      */
-    void message_filtering(void);
+    bool message_filtering(void);
 
     /**
      * @brief eventFilter 重写点击串口端口刷新串口
@@ -90,14 +104,11 @@ public slots:
      */
     int indexOfNthStr(QString sourceStr, QString str, uint N);
 
+
     /**
-     * @brief change_str_color 改变str在sourceStr中的颜色
-     * @param sourceStr
-     * @param str
-     * @param color
-     * @return
+     * @brief updateHighlight 当前行颜色设置
      */
-    QString change_str_color(QString sourceStr, QString str, QString color);
+    void updateHighlight();
 
 private slots:
     void on_openSerialBtn_clicked();
@@ -106,6 +117,7 @@ private slots:
     void on_close_test_clicked();
     void on_start_filtering_clicked();
     void on_stop_filtering_clicked();
+    void on_send_clicked();
 };
 
 #endif // SERIAL_PORT_TEST_H

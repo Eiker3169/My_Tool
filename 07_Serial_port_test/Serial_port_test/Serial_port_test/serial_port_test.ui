@@ -6,16 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>877</width>
-    <height>603</height>
+    <width>912</width>
+    <height>621</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Serial_port_tool</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="log.qrc">
+    <normaloff>:/new/prefix1/eiker.jpg</normaloff>:/new/prefix1/eiker.jpg</iconset>
+  </property>
   <layout class="QGridLayout" name="gridLayout_4">
-   <item row="0" column="0">
-    <widget class="QGroupBox" name="groupBox">
+   <item row="0" column="0" rowspan="2">
+    <widget class="QGroupBox" name="groupBox_5">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -24,131 +28,271 @@
      </property>
      <property name="minimumSize">
       <size>
-       <width>201</width>
-       <height>301</height>
+       <width>221</width>
+       <height>601</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>201</width>
-       <height>301</height>
+       <width>221</width>
+       <height>601</height>
       </size>
      </property>
      <property name="title">
-      <string>串口设置</string>
+      <string/>
      </property>
-     <layout class="QGridLayout" name="gridLayout_2">
-      <item row="2" column="0">
-       <widget class="QLabel" name="label_3">
-        <property name="text">
-         <string>校验位：</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0">
-       <widget class="QLabel" name="label_4">
-        <property name="text">
-         <string>数据位：</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1">
-       <widget class="QComboBox" name="baudrateCbx">
-        <item>
-         <property name="text">
-          <string>1000000</string>
+     <widget class="QGroupBox" name="groupBox_3">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>320</y>
+        <width>201</width>
+        <height>271</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>201</width>
+        <height>271</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>201</width>
+        <height>271</height>
+       </size>
+      </property>
+      <property name="title">
+       <string>测试</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="0" column="0" colspan="2">
+        <widget class="QLineEdit" name="msg_filtering">
+         <property name="placeholderText">
+          <string>输入需要过滤、测试的数据</string>
          </property>
-        </item>
-        <item>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QPushButton" name="start_filtering">
          <property name="text">
-          <string>115200</string>
+          <string>开启过滤</string>
          </property>
-        </item>
-        <item>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QPushButton" name="stop_filtering">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
          <property name="text">
-          <string>9600</string>
+          <string>关闭过滤</string>
          </property>
-        </item>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QComboBox" name="serialPortCbx"/>
-      </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="label_2">
-        <property name="text">
-         <string>波特率：</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="1">
-       <widget class="QComboBox" name="dataBitCbx">
-        <item>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QPushButton" name="clear_data">
          <property name="text">
-          <string>8</string>
+          <string>清除数据</string>
          </property>
-        </item>
-       </widget>
-      </item>
-      <item row="4" column="1">
-       <widget class="QComboBox" name="stopBitCbx">
-        <item>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="set_hz">
+         <property name="placeholderText">
+          <string>默认测试1HZ</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLineEdit" name="should_accept">
          <property name="text">
-          <string>1</string>
+          <string>应接受：</string>
          </property>
-        </item>
-       </widget>
-      </item>
-      <item row="5" column="0">
-       <widget class="QLabel" name="label_6">
-        <property name="text">
-         <string>流控制：</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="1">
-       <widget class="QComboBox" name="checkBitCbx">
-        <item>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QLineEdit" name="received">
          <property name="text">
-          <string>NONE</string>
+          <string>实接受：</string>
          </property>
-        </item>
-       </widget>
-      </item>
-      <item row="0" column="0">
-       <widget class="QLabel" name="label">
-        <property name="text">
-         <string>串口号：</string>
-        </property>
-       </widget>
-      </item>
-      <item row="6" column="0" colspan="2">
-       <widget class="QPushButton" name="openSerialBtn">
-        <property name="text">
-         <string>打开串口</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="0">
-       <widget class="QLabel" name="label_5">
-        <property name="text">
-         <string>停止位：</string>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="1">
-       <widget class="QComboBox" name="streamControlCbx">
-        <item>
+        </widget>
+       </item>
+       <item row="5" column="0" colspan="2">
+        <widget class="QLineEdit" name="received_rate">
          <property name="text">
-          <string>NONE</string>
+          <string>接受率：</string>
          </property>
-        </item>
-       </widget>
-      </item>
-     </layout>
+        </widget>
+       </item>
+       <item row="3" column="0" colspan="2">
+        <widget class="QPushButton" name="start_test">
+         <property name="text">
+          <string>开始测试</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0" colspan="2">
+        <widget class="QPushButton" name="close_test">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>停止测试</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>11</y>
+        <width>201</width>
+        <height>301</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>201</width>
+        <height>301</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>201</width>
+        <height>301</height>
+       </size>
+      </property>
+      <property name="title">
+       <string>串口设置</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>校验位：</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>数据位：</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QComboBox" name="baudrateCbx">
+         <item>
+          <property name="text">
+           <string>1000000</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>115200</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>9600</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QComboBox" name="serialPortCbx"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>波特率：</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QComboBox" name="dataBitCbx">
+         <item>
+          <property name="text">
+           <string>8</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QComboBox" name="stopBitCbx">
+         <item>
+          <property name="text">
+           <string>1</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="label_6">
+         <property name="text">
+          <string>流控制：</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QComboBox" name="checkBitCbx">
+         <item>
+          <property name="text">
+           <string>NONE</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>串口号：</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0" colspan="2">
+        <widget class="QPushButton" name="openSerialBtn">
+         <property name="text">
+          <string>打开串口</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="label_5">
+         <property name="text">
+          <string>停止位：</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QComboBox" name="streamControlCbx">
+         <item>
+          <property name="text">
+           <string>NONE</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+      </layout>
+     </widget>
     </widget>
    </item>
-   <item row="0" column="1" rowspan="2">
+   <item row="0" column="1">
     <widget class="QGroupBox" name="groupBox_2">
      <property name="title">
       <string>接送数据</string>
@@ -160,137 +304,81 @@
      </layout>
     </widget>
    </item>
-   <item row="1" column="0" rowspan="2">
-    <widget class="QGroupBox" name="groupBox_3">
+   <item row="1" column="1">
+    <widget class="QGroupBox" name="groupBox_4">
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
      <property name="minimumSize">
       <size>
-       <width>201</width>
-       <height>271</height>
+       <width>0</width>
+       <height>61</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>201</width>
-       <height>271</height>
+       <width>16777215</width>
+       <height>61</height>
       </size>
      </property>
      <property name="title">
-      <string>测试</string>
+      <string>发送数据</string>
      </property>
-     <layout class="QGridLayout" name="gridLayout_3">
-      <item row="0" column="0" colspan="3">
-       <widget class="QLineEdit" name="msg_filtering">
+     <layout class="QGridLayout" name="gridLayout_5">
+      <item row="0" column="0">
+       <widget class="QPushButton" name="send">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>71</width>
+          <height>29</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>71</width>
+          <height>29</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>发送</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="send_data">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="accessibleDescription">
+         <string/>
+        </property>
         <property name="placeholderText">
-         <string>输入需要过滤的数据</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="0" colspan="2">
-       <widget class="QLineEdit" name="should_accept">
-        <property name="text">
-         <string>应接受：</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="2">
-       <widget class="QLineEdit" name="received">
-        <property name="text">
-         <string>实接受：</string>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="0" colspan="3">
-       <widget class="QLineEdit" name="received_rate">
-        <property name="text">
-         <string>接受率：</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0" colspan="3">
-       <widget class="QPushButton" name="clear_data">
-        <property name="text">
-         <string>清除数据</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0" colspan="3">
-       <widget class="QPushButton" name="start_test">
-        <property name="text">
-         <string>开始测试</string>
-        </property>
-       </widget>
-      </item>
-      <item row="6" column="0" colspan="3">
-       <widget class="QPushButton" name="close_test">
-        <property name="enabled">
-         <bool>false</bool>
-        </property>
-        <property name="text">
-         <string>停止测试</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="2">
-       <widget class="QPushButton" name="stop_filtering">
-        <property name="text">
-         <string>关闭过滤</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0" colspan="2">
-       <widget class="QPushButton" name="start_filtering">
-        <property name="text">
-         <string>开启过滤</string>
+         <string>输入需要发送的数据（以十六进制发送，格式：&quot;a&quot; --&gt; &quot;0a&quot;，单独输入&quot;a&quot;无效）</string>
         </property>
        </widget>
       </item>
      </layout>
     </widget>
    </item>
-   <item row="2" column="1">
-    <widget class="QGroupBox" name="groupBox_4">
-     <property name="title">
-      <string>发送数据</string>
-     </property>
-     <widget class="QPushButton" name="start_message_filtering">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>20</y>
-        <width>71</width>
-        <height>29</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>发送</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lineEdit_2">
-      <property name="geometry">
-       <rect>
-        <x>90</x>
-        <y>20</y>
-        <width>521</width>
-        <height>25</height>
-       </rect>
-      </property>
-      <property name="accessibleDescription">
-       <string/>
-      </property>
-      <property name="placeholderText">
-       <string>输入需要发送的数据</string>
-      </property>
-     </widget>
-    </widget>
-   </item>
   </layout>
+  <zorder>groupBox_5</zorder>
+  <zorder>groupBox_2</zorder>
+  <zorder>groupBox_4</zorder>
  </widget>
- <resources/>
+ <resources>
+  <include location="log.qrc"/>
+ </resources>
  <connections/>
 </ui>

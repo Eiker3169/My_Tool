@@ -28,3 +28,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 FORMS += \
     serial_port_test.ui
+
+RESOURCES += \
+    log.qrc

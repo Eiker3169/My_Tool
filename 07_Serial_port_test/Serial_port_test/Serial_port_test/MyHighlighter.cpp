@@ -5,7 +5,7 @@ MyHighlighter::MyHighlighter(QTextDocument *parent)
 {
     //关键字高亮
     HighlightingRule keys_rule;
-    keys_rule.pattern.setPattern("(def|function|return)");
+    keys_rule.pattern.setPattern("(def|function|return|)");
     keys_rule.format.setForeground(QColor(0, 0, 255));
     keys_rule.format.setFontWeight(QFont::Bold);
     highlightingRules.append(keys_rule);

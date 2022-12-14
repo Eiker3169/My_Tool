@@ -13,7 +13,7 @@ public:
 protected:
     void highlightBlock(const QString &text) override;
 
-private:
+public:
     struct HighlightingRule
     {
         QRegularExpression pattern;
