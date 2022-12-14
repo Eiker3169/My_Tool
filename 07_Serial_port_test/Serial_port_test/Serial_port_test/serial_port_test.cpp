@@ -1,6 +1,10 @@
 #include "serial_port_test.h"
 #include "ui_serial_port_test.h"
 
+#include "MyHighlighter.h"
+#include <QTextBlock>
+#include <QPalette>
+
 Serial_port_test::Serial_port_test(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Serial_port_test)
@@ -12,10 +16,47 @@ Serial_port_test::Serial_port_test(QWidget *parent) :
 
     ui->serialPortCbx->installEventFilter(this);
 
+    timer.setTimerType(Qt::PreciseTimer);
+    test_timer.setTimerType(Qt::PreciseTimer);
 
-    QObject::connect(&timer,&QTimer::timeout,this,&Serial_port_test::message_filtering);
+//    QObject::connect(&timer,&QTimer::timeout,this,&Serial_port_test::message_filtering);
 
-    timer.start(1000);
+//    timer.start(100);
+
+    //背景和选区颜色
+    QPalette pt = palette();
+    pt.setBrush(QPalette::Text, Qt::white);
+    pt.setBrush(QPalette::Base, Qt::black);
+    pt.setBrush(QPalette::Highlight, Qt::gray);
+    pt.setBrush(QPalette::HighlightedText, Qt::NoBrush);
+    ui->logtextEdit->setPalette(pt);
+
+    //语法高亮
+    MyHighlighter *keys_lighter = new MyHighlighter(ui->logtextEdit->document());
+    Q_UNUSED(keys_lighter)
+
+    //当前行颜色设置
+    connect(ui->logtextEdit, &QTextEdit::cursorPositionChanged, this, &Serial_port_test::updateHighlight);
+    updateHighlight();
+
+    connect(ui->msg_filtering,&QLineEdit::textChanged,this,[=]{
+        keys_lighter->highlightingRules.removeLast();
+        msg_filtering_changed = ui->msg_filtering->text();
+        MyHighlighter::HighlightingRule filtering;
+        filtering.pattern.setPattern(msg_filtering_changed);
+        filtering.format.setForeground(QColor(238, 0, 0));
+        keys_lighter->highlightingRules.append(filtering);
+
+    });
+
+    connect(ui->set_hz,&QLineEdit::textChanged,this,[=]{
+        bool ok;
+        QString tmp_str = ui->set_hz->text();
+        int tmp_int = tmp_str.toInt(&ok,10);
+        if((tmp_int>=1)&&(tmp_int<=10)){
+            test_hz = tmp_int;
+        }
+    });
 
 }
 
@@ -35,87 +76,102 @@ QStringList Serial_port_test::getPortNameList()
         return m_serialPortName;
 }
 
-void Serial_port_test::thread_run()
+void Serial_port_test::StringToHex(QString str, QByteArray &senddata)
 {
-    if(serial_buf != ""){
-        if(message_filtering_flag == true){
-            QString str = "received 35";
-            if(serial_buf.contains(str,Qt::CaseInsensitive)){
-               QDateTime dateTime = QDateTime::currentDateTime();// 字符串格式化
-               QString timestr = dateTime.toString("[yyyy-MM-dd hh:mm:ss.zzz] ");
-               timestr = QString("<font color=\"#00FA9A\">%1</font> ").arg(timestr);
-               timestr+="received 35";
-                ui->logtextEdit->append(timestr);
-
-                if(is_open == true){
-                    received_count++;
-                    QString str = "实接受：";
-                    str += QString::number(received_count);
-                    ui->received->setText(str);
-
-                }
-            }
-            serial_buf = "";
-            ui->logtextEdit->moveCursor(QTextCursor::End);
+    int hexdata,lowhexdata;
+    int hexdatalen = 0;
+    int len = str.length();
+    senddata.resize(len/2);
+    char lstr,hstr;
+    for(int i=0; i<len; )
+    {
+        //char lstr,
+        hstr = str[i].toLatin1();
+        if(hstr == ' ')
+        {
+            i++;
+            continue;
         }
-        else{
-            QDateTime dateTime = QDateTime::currentDateTime();// 字符串格式化
-            QString timestr = dateTime.toString("[yyyy-MM-dd hh:mm:ss.zzz] ");
-            timestr = QString("<font color=\"#00FA9A\">%1</font> ").arg(timestr);
-            ui->logtextEdit->append(timestr);
-
-            QString str = "";
-            foreach(auto msg,serial_buf){
-                if(msg != '\n'){
-                    str.append(msg);
-                }
-                else{
-                    QString tmp_msg = ui->msg_filtering->text();
-                    str = change_str_color(str,tmp_msg,"red");
-                    ui->logtextEdit->append(str);
-                    str = "";
-                }
-            }
-
-            serial_buf = "";
-            ui->logtextEdit->moveCursor(QTextCursor::End);
-        }
-
-
+        i++;
+        if(i >= len)
+            break;
+        lstr = str[i].toLatin1();
+        hexdata = ConvertHexChar(hstr);
+        lowhexdata = ConvertHexChar(lstr);
+        if((hexdata == 16) || (lowhexdata == 16))
+            break;
+        else
+            hexdata = hexdata*16+lowhexdata;
+        i++;
+        senddata[hexdatalen] = (char)hexdata;
+        hexdatalen++;
     }
+    senddata.resize(hexdatalen);
+}
 
-
-
-
+char Serial_port_test::ConvertHexChar(char ch)
+{
+    if((ch >= '0') && (ch <= '9'))
+        return ch-0x30;
+    else if((ch >= 'A') && (ch <= 'F'))
+        return ch-'A'+10;
+    else if((ch >= 'a') && (ch <= 'f'))
+        return ch-'a'+10;
+    else return (-1);
 
 }
 
-
-
 void Serial_port_test::recvData()
 {
+    if(rec_timer == false){
+        rec_timer = true;
+    QObject::connect(&timer,&QTimer::timeout,this,&Serial_port_test::message_filtering);
+    timer.start(100);
+    }
 
+    QMutexLocker locker(&status_mutex);
 
     QByteArray recvbuf;
     recvbuf = serial->readAll();
 
     serial_buf += QString(recvbuf);
-
-//    QDateTime dateTime = QDateTime::currentDateTime();// 字符串格式化
-//    QString timestr = dateTime.toString("[yyyy-MM-dd hh:mm:ss.zzz] ");
-//    timestr += tmp_str;
-
-    //qDebug()<<timestr;
-
-
 }
 
-void Serial_port_test::message_filtering()
+bool Serial_port_test::message_filtering()
 {
-    QMutexLocker locker(&status_mutex);
-  //  thread_run();
 
-     QtConcurrent::run(this,&Serial_port_test::thread_run);
+    if(serial_buf != ""){
+        QMutexLocker locker(&status_mutex);
+
+        QString tmp_str = ui->msg_filtering->text();
+        bool tmp_bool = serial_buf.contains(tmp_str,Qt::CaseInsensitive);
+        if(is_open_filtering == true){
+            if(!tmp_bool){
+                serial_buf = "";
+                return false;
+            }
+        }
+
+        if(received_count_flag == true){
+            if(tmp_bool){
+                received_count++;
+            }
+        }
+
+        QDateTime dateTime = QDateTime::currentDateTime();// 字符串格式化
+        QString timestr = dateTime.toString("[yyyy-MM-dd hh:mm:ss.zzz]");
+        timestr = QString("<font color=\"#00FA9A\">%1</font> ").arg(timestr);
+        ui->logtextEdit->append(timestr);
+
+        ui->logtextEdit->append(serial_buf);
+        rec_timer = false;
+        QObject::disconnect(&timer,nullptr,nullptr,nullptr);
+        serial_buf = "";
+        return true;
+    }
+    return false;
+
+
 }
 
 bool Serial_port_test::eventFilter(QObject *watched, QEvent *event)
@@ -147,47 +203,21 @@ int Serial_port_test::indexOfNthStr(QString sourceStr, QString str, uint N)
        return index;
 }
 
-QString Serial_port_test::change_str_color(QString sourceStr, QString str, QString color)
-{   QString tmp_str = "";
-    QString tmp_str_change = "";
-    int tmp_str_size = str.size();
-    int tmp_sourceStr_size = sourceStr.size();
-    int tmp_count = sourceStr.count(str);
-    bool pos_flag = false;
-    for(int i = 0; i < tmp_sourceStr_size; i++){
-        for(int j = 0; j < tmp_count+1; j++){
-            int tmp_pos = indexOfNthStr(sourceStr, str, j);
-            if((i >= tmp_pos)&&(i < (tmp_pos + tmp_str_size))){
-                pos_flag = true;
-                if(i == tmp_pos){
-                    if(color == "red"){
-                        tmp_str_change = QString("<font color=\"#FF0000\">%1</font>").arg(str);
-                    }
-                    else if(color == "green"){
-                        tmp_str_change = QString("<font color=\"#00FA9A\">%1</font>").arg(str);
-                    }
-                    else if(color == "bule"){
-                        tmp_str_change = QString("<<font color=\"#0000FF\">%1</font>").arg(str);
-                    }
-                    else{
-                        tmp_str_change = QString("<font color=\"#FFFFFF\">%1</font>").arg(str);
-                    }
 
-//                    int tmp_int = tmp_str_change.size();
-//                    for(int c = 0; c < tmp_int-1; c++){
-//                        tmp_str.append(tmp_str_change.at(c));
-//                    }
-                    tmp_str.append(tmp_str_change);
-                }
-            }
 
-        }
-        if(pos_flag != true){
-            tmp_str += sourceStr.at(i);
-        }
-        pos_flag = false;
-    }
-    return tmp_str;
+void Serial_port_test::updateHighlight()
+{
+    QList<QTextEdit::ExtraSelection> extra_selections;
+
+    //当前行背景样式
+    QTextEdit::ExtraSelection line;
+    line.format.setBackground(QColor(0, 0, 255));
+    line.format.setProperty(QTextFormat::FullWidthSelection, true);
+    line.cursor = ui->logtextEdit->textCursor();
+    line.cursor.clearSelection();
+    extra_selections.append(line);
+
+    ui->logtextEdit->setExtraSelections(extra_selections);
 }
 
 void Serial_port_test::on_openSerialBtn_clicked()
@@ -266,14 +296,36 @@ void Serial_port_test::on_start_test_clicked()
         ui->received->setText("");
         ui->start_test->setEnabled(false);
         ui->close_test->setEnabled(true);
+        ui->set_hz->setEnabled(false);
         is_open = true;
+        received_count_flag = true;
         received_count = 0;
         test_count = 0;
         QObject::connect(&test_timer,&QTimer::timeout,this,[&](){
-            test_count++;
+            test_count += test_hz;
             QString str = "应接受：";
             str += QString::number(test_count);
             ui->should_accept->setText(str);
+            str = "已接受：";
+            str += QString::number(received_count);
+            ui->received->setText(str);
+
+            if(is_close_test_connect == true){
+                QObject::disconnect(&test_timer,nullptr,nullptr,nullptr);
+
+                double tmp_double = (double)received_count / (double)test_count;
+                tmp_double *= (double)100;
+
+                QString str = "接受率：";
+                str += QString::number(tmp_double,'f',2);
+                str += "%";
+
+                ui->received_rate->setText(str);
+
+                is_close_test_connect = false;
+                received_count_flag = false;
+            }
+
         });
 
         test_timer.start(1000);
@@ -286,17 +338,48 @@ void Serial_port_test::on_close_test_clicked()
     if(is_open == true){
         ui->start_test->setEnabled(true);
         ui->close_test->setEnabled(false);
+        ui->set_hz->setEnabled(true);
         is_open = false;
-        QObject::disconnect(&test_timer,nullptr,nullptr,nullptr);
 
-        double tmp_double = (double)received_count / (double)test_count;
-        tmp_double *= (double)100;
+        is_close_test_connect = true;
 
-        QString str = "接受率：";
-        str += QString::number(tmp_double,'f',2);
-        str += "%";
-
-        ui->received_rate->setText(str);
     }
+}
+
+
+void Serial_port_test::on_start_filtering_clicked()
+{
+    is_open_filtering = true;
+    ui->start_filtering->setEnabled(false);
+    ui->stop_filtering->setEnabled(true);
+    ui->msg_filtering->setEnabled(false);
+}
+
+
+void Serial_port_test::on_stop_filtering_clicked()
+{
+    is_open_filtering = false;
+    ui->start_filtering->setEnabled(true);
+    ui->stop_filtering->setEnabled(false);
+    ui->msg_filtering->setEnabled(true);
+}
+
+
+void Serial_port_test::on_send_clicked()
+{
+    if(isconnected == true){
+        if(ui->send->text().isEmpty()){
+            return;
+        }
+
+        QString send_str = ui->send_data->text().toUpper();
+        qDebug()<<send_str;
+
+        QByteArray send_data;
+        StringToHex(send_str,send_data);
+        serial->write(send_data);
+
+    }
+
 }
 

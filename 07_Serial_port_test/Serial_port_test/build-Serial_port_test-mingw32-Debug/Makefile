@@ -278,7 +278,8 @@ Makefile: ../Serial_port_test/Serial_port_test.pro D:/Qt/5.15.2/mingw81_32/mkspe
 		D:/Qt/5.15.2/mingw81_32/lib/Qt5Concurrent.prl \
 		D:/Qt/5.15.2/mingw81_32/lib/Qt5Core.prl \
 		D:/Qt/5.15.2/mingw81_32/lib/qtmain.prl \
-		D:/Qt/5.15.2/mingw81_32/mkspecs/features/build_pass.prf
+		D:/Qt/5.15.2/mingw81_32/mkspecs/features/build_pass.prf \
+		../Serial_port_test/log.qrc
 	$(QMAKE) -o Makefile ..\Serial_port_test\Serial_port_test.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 D:/Qt/5.15.2/mingw81_32/mkspecs/features/spec_pre.prf:
 D:/Qt/5.15.2/mingw81_32/mkspecs/qdevice.pri:
@@ -489,6 +490,7 @@ D:/Qt/5.15.2/mingw81_32/lib/Qt5Concurrent.prl:
 D:/Qt/5.15.2/mingw81_32/lib/Qt5Core.prl:
 D:/Qt/5.15.2/mingw81_32/lib/qtmain.prl:
 D:/Qt/5.15.2/mingw81_32/mkspecs/features/build_pass.prf:
+../Serial_port_test/log.qrc:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ..\Serial_port_test\Serial_port_test.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 
