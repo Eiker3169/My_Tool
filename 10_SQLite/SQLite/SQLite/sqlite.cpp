@@ -5,6 +5,7 @@ sqlite::sqlite()
 
 }
 
+
 /**
  * @brief create_db     创建数据库
  * @param connection    连接名
@@ -66,6 +67,22 @@ bool sqlite::create_table(QString creat_table_statement)
         }
     }
     return false;
+}
+
+void sqlite::delete_table(QString table_name)
+{
+    if(database.isOpen()){
+        QSqlQuery sqlQuery(database);
+        sqlQuery.prepare(QString("drop table %1").arg(table_name));
+        if(sqlQuery.exec()){
+            qDebug()<<"Delete table successfully";
+
+        }
+        else{
+            qDebug()<<"Failed to delete table";
+
+        }
+    }
 }
 
 bool sqlite::insert_data_to_db(QString insert_data_statement)

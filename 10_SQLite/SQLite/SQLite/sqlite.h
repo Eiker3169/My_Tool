@@ -27,6 +27,8 @@ public:
 
     bool create_table(QString creat_table_statement);
 
+    void delete_table(QString table_name);
+
     bool insert_data_to_db(QString insert_data_statement);
 
     QString inquire_str_data_from_db(QString inquire_data_statement);

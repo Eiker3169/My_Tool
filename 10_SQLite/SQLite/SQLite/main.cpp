@@ -26,8 +26,11 @@ int main(int argc, char *argv[])
 
     }
     QString tmp_str = "";
-    tmp_str = my_sql.inquire_str_data_from_db(QString("select data from my_table where serial_number=%1").arg(3));
+    tmp_str = my_sql.inquire_str_data_from_db(QString("select data from my_table where serial_number=%1").arg(4));
     qDebug()<<tmp_str;
+
+    my_sql.delete_table("my_table");
+    my_sql.close_db();
 
     return a.exec();
 }
