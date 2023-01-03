@@ -3,7 +3,7 @@
 03 TCP服务端和客户端
 04 TableView
 05 TCP误码率
-06 动态TableView，可增加列表
+06 TableView动态增加行，可点击勾选
 07 串口，可数据高亮、过滤、测试
 08 TextEdit关键字高亮
 09 QTableView大数据实时显示，从本地导入数据
